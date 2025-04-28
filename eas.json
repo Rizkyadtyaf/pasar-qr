@@ -1,0 +1,44 @@
+{
+    "cli": {
+      "version": ">= 16.3.3",
+      "appVersionSource": "remote"
+    },
+    "build": {
+      "development": {
+        "developmentClient": true,
+        "distribution": "internal",
+        "channel": "development"
+      },
+      "preview": {
+        "distribution": "internal",
+        "channel": "preview",
+        "android": {
+          "buildType": "apk"
+        },
+        "env": {
+          "EXPO_PUBLIC_SUPABASE_URL": "${SUPABASE_URL}",
+          "EXPO_PUBLIC_SUPABASE_ANON_KEY": "${SUPABASE_ANON_KEY}",
+          "EXPO_PUBLIC_IMAGEKIT_PUBLIC_KEY": "${IMAGEKIT_PUBLIC_KEY}",
+          "EXPO_PUBLIC_IMAGEKIT_URL_ENDPOINT": "${IMAGEKIT_URL_ENDPOINT}",
+          "EXPO_PUBLIC_IMAGEKIT_PRIVATE_KEY": "${IMAGEKIT_PRIVATE_KEY}",
+          "CLIENT_ID_OAUTH": "${GOOGLE_OAUTH_CLIENT_ID}",
+          "CLIENT_SECRET": "${GOOGLE_OAUTH_CLIENT_SECRET}",
+          "RESEND_API_KEY": "${RESEND_API_KEY}"
+        }
+      },
+      "production": {
+        "autoIncrement": true,
+        "channel": "production"
+      },
+      "apk": {
+        "android": {
+          "buildType": "apk"
+        },
+        "autoIncrement": true,
+        "channel": "apk"
+      }
+    },
+    "submit": {
+      "production":{}
+  }
+  }
